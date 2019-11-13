@@ -5,7 +5,7 @@ function save_data(){
 
 
 
-$db_conn = new mysqli('localhost','lamp1_survey','!survey!','lamp1_survey');
+$db_conn = new mysqli('us-cdbr-iron-east-05.cleardb.net','b0b865ef0d38b8','9f60b0e1');
 if ($db_conn->connect_errno){
 printf ("Could not connect to database server".$db_host."\n Error: ".$db_conn->connect_errno ."\n Report: ".$db_conn->connect_error."\n");
 }
