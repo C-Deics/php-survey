@@ -1,9 +1,6 @@
-drop database if exists lamp1_survey;
-create database lamp1_survey;
+grant all privileges on heroku_3245f05205413bf.* to 'b0b865ef0d38b8'@'us-cdbr-iron-east-05.cleardb.net' identified by '9f60b0e1';
 
-grant all privileges on lamp1_survey.* to 'lamp1_survey'@'localhost' identified by '!survey!';
-
-use lamp1_survey
+use heroku_3245f05205413bf;
 
 CREATE TABLE `participants` (
   `part_id` int(11) NOT NULL AUTO_INCREMENT,
