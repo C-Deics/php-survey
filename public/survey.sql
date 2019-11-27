@@ -1,6 +1,4 @@
-grant all privileges on heroku_3245f05205413bf.* to 'b0b865ef0d38b8'@'us-cdbr-iron-east-05.cleardb.net' identified by '9f60b0e1';
 
-use heroku_3245f05205413bf;
 
 CREATE TABLE `participants` (
   `part_id` int(11) NOT NULL AUTO_INCREMENT,
