@@ -3,22 +3,16 @@
 
 function save_data(){
 
+$servername = getenv('servername');
+$username = getenv('username');
+$password = getenv('password');
+$dbname = getenv('dbname');
 
- static $db_conn;
+$db_conn = new mysqli($servername,'$username','$password','$dbname');
 
-        // Try and connect to the database, if a connection has not been established yet
-    if(!isset($db_conn)) {
-             // Load configuration as an array. Use the actual location of your configuration file
-        $config = parse_ini_file('../private/config.ini'); 
-        $db_conn = mysqli_connect($config['servername'],$config['username'],$config['password'],$config['dbname']);
-    }
-
-        // If connection was not successful, handle the error
-  if ($db_conn->connect_errno){
+if ($db_conn->connect_errno){
 printf ("Could not connect to database server".$db_host."\n Error: ".$db_conn->connect_errno ."\n Report: ".$db_conn->connect_error."\n");
 }
-
-
     $part_fullname = $db_conn->real_escape_string($_SESSION['fullName']);
     $part_age = $db_conn->real_escape_string($_SESSION['age']);
     $part_student = $db_conn->real_escape_string($_SESSION['studentType']);
