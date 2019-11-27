@@ -8,7 +8,7 @@ $username = getenv('username');
 $password = getenv('password');
 $dbname = getenv('dbname');
 
-$db_conn = new mysqli($servername,$username,password,$dbname);
+$db_conn = new mysqli($servername,$username,$password,$dbname);
 
 if ($db_conn->connect_errno){
 printf ("Could not connect to database server".$db_host."\n Error: ".$db_conn->connect_errno ."\n Report: ".$db_conn->connect_error."\n");
