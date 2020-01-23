@@ -30,13 +30,15 @@ function form_3(){
             }
         }
 ?>
-	<form method="POST">
+	<form class ="inputs" method="POST">
+                
         <?php for ($i = 0; $i < count($_SESSION['purchases']); $i++){
-                    echo $_SESSION['purchases'][$i]['name'];
+                    echo"<p class='echoText'>". $_SESSION['purchases'][$i]['name'] . "</p>";
             ?>
-        	<br>
-            <label for="satisfaction">How happy are you with this device on a scale from 1 (not satisfied) to 5 (very satisfied)?</label>
-<br>
+        	
+                <div class="labelsRating"><label for="satisfaction">How happy are you with this device on a scale from 1 (not satisfied) to 5 (very satisfied)?</label></div>
+                <div class="input-tab ">
+
             <?php if ($resp_satisfied[$i] == "1"){ ?>
                         <input type="radio" name="satisfaction<?php echo($i); ?>" checked="checked" value="1">1</input><br>
              <?php } else { ?>
@@ -59,9 +61,10 @@ function form_3(){
                     <input type="radio" name="satisfaction<?php echo($i); ?>" value="5">5</input><br>
             <?php } ?>
             <br>
-            <label for="recommendation">Would you recommend the purchase of this device to a friend?</label>
-<br>
-            <select id="recommend" name="recommend<?php echo($i); ?>" size="1">
+            </div>
+            <div class="labelsRating"><label for="recommendation">Would you recommend the purchase of this device to a friend?</label></div><div class="input-tab">
+
+            <select class="dropdown" id="recommend" name="recommend<?php echo($i); ?>" size="1">
                 <?php if ($resp_recommend[$i] == ""){ ?>
                         <option selected="selected" value="Choice"></option>
                 <?php } else { ?>
@@ -83,15 +86,14 @@ function form_3(){
                         <option value="No">No</option>
                 <?php } ?>
                 </select>
-<br>
+<br><br>
+                </div>
         <?php } ?>
-		<br><br>
-        <table>
-            <tr>
-                <td><input type="submit" name="survey_b_back" value="Back"></td>
-                <td><input type="submit" name="survey_b_next" value="Next"></td>
-            </tr>
-        </table>
+		
+                <div class="btn">
+                <input class="button" type="submit" name="survey_b_back" value="Back">
+                <input  class="button" type="submit" name="survey_b_next" value="Next">
+           </div>
 	</form>
     
 <?php } ?>

@@ -1,0 +1,217 @@
+body {
+  background-color: rgb(110, 154, 250);
+}
+.summary {
+  margin: 20px auto 0;
+}
+
+.container {
+  position: relative;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 55%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  min-height: 80vh;
+  height: auto;
+  width: 80vw;
+
+  margin: 20px auto 0;
+}
+.title {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 3% 20% 0% 20%;
+}
+h4 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 3% 20% 0% 20%;
+}
+
+.inputs {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+}
+/*new*/
+#survey-form {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.labels {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  vertical-align: top;
+  margin-top: 20px;
+}
+
+.labelsRating {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  vertical-align: top;
+  padding-top: 30px;
+}
+
+.input-tab {
+  display: inline-block;
+  text-align: left;
+  width: 40%;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.input-field {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  margin: 18px 0 0 10px;
+  border: 1px solid #e67e22;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+}
+
+input {
+  margin: 7px;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 5px;
+  margin: 20px 0 10px 10px;
+  border: 1px solid #e67e22;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 15px;
+}
+.btn {
+  width: 100%;
+  text-align: center;
+  margin: 20px;
+}
+
+.button {
+  background-color: #e67e22;
+  border-radius: 4px;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: inherit;
+  padding: 10px 15px;
+  border: 1px solid;
+  font-family: "Roboto", sans-serif;
+}
+
+.button:hover {
+  background-color: #bf6516;
+}
+
+.errormsg {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  background-color: #edeeee;
+  border-radius: 20px;
+}
+
+.errormsg ul {
+  list-style-type: none;
+}
+.errormsg li {
+  padding-top: 15px;
+}
+.radiobtn {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  /* smartphones, Android phones, landscape iPhone */
+  .container {
+    border-top: 13px solid #edeeee;
+    border-right: 13px solid #edeeee;
+    border-bottom: 13px solid #edeeee;
+    border-left: 13px solid #edeeee;
+    border-radius: 20px;
+    margin: 5px auto 0;
+    height: auto;
+    min-height: 130vh;
+    width: 80vw;
+    display: block;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .labels {
+    width: 100%;
+    text-align: left;
+  }
+  .input-tab {
+    width: 100%;
+    float: left;
+    margin-left: -5px;
+  }
+
+  .errormsg li {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .container {
+    border-top: 34px solid #edeeee;
+    border-right: 40px solid #edeeee;
+    border-bottom: 34px solid #edeeee;
+    border-left: 40px solid #edeeee;
+    border-radius: 22px;
+    margin: 20px auto 0;
+  }
+
+  .errormsg {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  /* big landscape tablets, laptops, and desktops */
+  .container {
+    border-radius: 3px;
+    border-top: 28px solid #edeeee;
+    height: auto;
+    min-height: 80vh;
+    width: 80vw;
+    display: block;
+  }
+  .errormsg {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 5rem;
+    text-align: center;
+    margin: auto 0;
+  }
+}

@@ -27,9 +27,10 @@ $resp_product = array();
 
  ?>
 
-<form method="POST">
-		<label for="name">How did you complete your purchase?</label>
-<br>
+<form class="inputs" method="POST">
+<div class="labels">
+		<label for="name">How did you complete your purchase?</label></div>
+		<div class="input-tab">
 		<?php if ($resp_how_purchased == "1"){ ?>
 				<input type="radio" name="howPurchased" checked="checked" value="1">Online</input><br>
 		<?php } else { ?>
@@ -47,17 +48,21 @@ $resp_product = array();
 			<input type="radio" name="howPurchased" value="3">Mobile App</input><br>
 
 		<?php }if ($resp_how_purchased == "4"){ ?>
-				<input type="radio" name="howPurchased" checked="checked" value="4">In Store</input><br><br><br>
+				<input type="radio" name="howPurchased" checked="checked" value="4">In Store</input><br>
 		<?php } else { ?>
-				<input type="radio" name="howPurchased" value="4">In Store</input><br><br><br>
+				<input type="radio" name="howPurchased" value="4">In Store</input><br>
+
+		</div>
 
 
+				
 
-
-        <label for="student">At least one option must be selected</label>
-<br>
-		<?php }if (in_array("Home Phone",$resp_product)){ ?>
-				<input type="checkbox" name="purchases[]" checked="checked" value="Home Phone">Home Phone</input><br>
+		<?php } ?>
+		<div class="labels"><label for="student">At least one option must be selected</label>
+		</div>
+		<div  class="input-tab">
+		<?php if (in_array("Home Phone",$resp_product)){ ?>
+				<input id="student" type="checkbox" name="purchases[]" checked="checked" value="Home Phone">Home Phone</input><br>
 		<?php } else  { ?> 
 			<input type="checkbox" name="purchases[]" value="Home Phone">Home Phone</input><br>
 			  
@@ -92,14 +97,13 @@ $resp_product = array();
 			<input type="checkbox" name="purchases[]" value="Home Theatre">Home Theatre</input><br>
 		<?php } ?>
 		
-	
+		</div>
 
-		<table>
-                <tr>
-                    <td><input type="submit" name="survey_b_back" value="Back"></td>
-                    <td><input type="submit" name="survey_b_next" value="Next"></td>
-                </tr>
-            </table>
+		<div class="btn">
+                    <input class="button" type="submit" name="survey_b_back" value="Back">
+                    <input class="button" type="submit" name="survey_b_next" value="Next">
+					</div>
+               
 </form>
 <?php } ?>
 <?php

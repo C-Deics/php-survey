@@ -1,11 +1,8 @@
 <?php 
-/* -- Group Project Code
+/* -- 
 A multi part session application that saves data
 from the user and into the database
-Colby Deics - 0785356
-Naomi Dowell - 0836402
-Nayef Chams - 0632720
-Nicholas Brousseau - 0714552
+
  -- */
 	session_start(); 
 	if (!isset($_SESSION['mode'])){
@@ -25,9 +22,12 @@ Nicholas Brousseau - 0714552
 <html>
 	<head>
 		<title>Survey</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
 	</head>
 	<body>
-
+<div class="container">
 <?php
 
 if (isset($_POST['survey_b_start']) && ($_POST['survey_b_start'] == "Start Survey")){
@@ -62,12 +62,12 @@ if(($_SESSION['mode'] == "Start") && ($_SERVER['REQUEST_METHOD'] == "GET")){
 } else if($_SESSION['mode'] == "Start"){ 
 	switch ($_SESSION['nav_part']) {
 		case 0:
-			echo "<h1> Survey </h1>\n";
+			echo '<p class="title"> Customer Feedback Survey </p>';
 			$_SESSION['nav_part'] = 1;
 			form_1();
 			break;
 		case 1:
-			echo "<h1> Survey </h1>\n";
+			echo '<p class="title"> Customer Feedback Survey </p>';
 			$err_msgs = validateBasicInfo();
 			if (count($err_msgs) > 0){
 				displayErrors($err_msgs);
@@ -82,7 +82,7 @@ if(($_SESSION['mode'] == "Start") && ($_SERVER['REQUEST_METHOD'] == "GET")){
 			
 			break;
 		case 2:
-			echo "<h1> Survey </h1>\n";
+			echo '<p class="title"> Customer Feedback Survey </p>';
 			$err_msgs = validatePurchases();
 			if (count($err_msgs) > 0){
 				displayErrors($err_msgs);
@@ -100,7 +100,7 @@ if(($_SESSION['mode'] == "Start") && ($_SERVER['REQUEST_METHOD'] == "GET")){
 			}
 			break;
 		case 3:
-			echo "<h1> Survey </h1>\n";
+			echo '<p class="title"> Customer Feedback Survey </p>';
 			$err_msgs = validateRatings();
 			if (count($err_msgs) > 0){
 				displayErrors($err_msgs);
@@ -131,7 +131,7 @@ if(($_SESSION['mode'] == "Start") && ($_SERVER['REQUEST_METHOD'] == "GET")){
 				formThanksDisplay();
 			} else if ((isset($_POST['survey_b_back']))
 						&& ($_POST['survey_b_back'] == "Back")){
-				echo "<h1> Add New Contact </h1>\n";
+				
 				$_SESSION['nav_part'] = 3;
 				form_3();
 			}
@@ -142,14 +142,15 @@ if(($_SESSION['mode'] == "Start") && ($_SERVER['REQUEST_METHOD'] == "GET")){
 	formSurveyDisplay();
 } 
 ?>
+</div>
 	</body>
 </html>
 <?php
 function formSurveyDisplay(){
 ?>
 
-<h1> Survey </h1>
-			<p style="margin:0% 20% 0% 20%;">Hello, Welcome to the best survey ever.
+<p class="title"> Customer Feedback Survey </p>
+			<p >Hello, Welcome to the best survey ever.
 			Please follow the directions at every step
 			In the following survey you will answer questions about your current student status,
 			what you purchased,and how you purchased it.
@@ -158,12 +159,9 @@ function formSurveyDisplay(){
 			<br>
 			<div>
 		<form method="POST">
-			<table>
-			
-			<tr>
-				<td><input type="submit" name ="survey_b_start" value="Start Survey"></td>
-			</tr>
-			</table>
+			<div class="btn">
+				<input class="button" type="submit" name ="survey_b_start" value="Start Survey">
+			</div>
 		</form>
 		</div>
 

@@ -28,17 +28,19 @@ function form_1(){
             } 
         }
 ?>
-	<form method="POST">
-		<label for="name">Full Name</label>
-		<input type="text" size="50" maxlength="25" id ="fullName" name="fullName" value="<?php echo $part_fullname; ?>"></input><br>
-		<br><br>
-		<label for="email">Your Age</label>
-		<input type="text" size="3" maxlength="125" id ="age" name="age" value="<?php echo $part_age; ?>"></input><br>
-		<br><br>
-		<label for="studentType">Are you a student?</label>
-
-		<select id="studentType" name="studentType" size="1">
-
+	<form class="inputs" method="POST">
+	<div class="labels">
+		<label for="name">Full Name</label></div>
+		<div class="input-tab">
+		<input class="input-field" type="text" size="30" maxlength="25" id ="fullName" name="fullName" value="<?php echo $part_fullname; ?>"></input></div>
+		
+		<div class="labels"><label for="email">Your Age</label></div>
+		<div class="input-tab"><input  class="input-field"type="text" size="3" maxlength="125" id ="age" name="age" value="<?php echo $part_age; ?>"></input></div>
+		
+		<div class="labels"><label for="studentType">Are you a student?</label></div>
+		<div class="input-tab">
+		<select  class="input-field" id="studentType" name="studentType" size="1">
+	
             <?php if ((strlen($part_student) == 0) ){ ?>
                             <option selected="selected" value="Choice"></option>
             <?php } else { ?>
@@ -60,13 +62,11 @@ function form_1(){
                             <option value="n">No</option>
             <?php } ?>
 			</select>
-		<br><br>
-            <table>
-                <tr>
-                   <tr><td><input type="submit" disabled="disabled" name="survey_b_back" value="Back"></td>
-                    <td><input type="submit" name="survey_b_next" value="Next"></td>
-                </tr>
-            </table>
+		</div>
+		<div class="btn">
+                   <input class="button"  type="submit" disabled="disabled" name="survey_b_back" value="Back">
+                    <input  class="button"  type="submit" name="survey_b_next" value="Next">
+					</div>
 	</form>
 <?php } ?>
 
