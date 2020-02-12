@@ -170,7 +170,7 @@ function formSurveyDisplay(){
 <?php
 function formThanksDisplay(){
 ?>
-<h1> Thank you for taking the survey! </h1>
+<h1 style="text-align: center;"> Thank you for taking the survey! </h1>
 			
 <?php } ?>
 
